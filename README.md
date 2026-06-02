@@ -19,11 +19,11 @@ STEP 4:Apply the various data visualization tools wherever necessary.
 STEP 5:Include Necessary parameters in each functions.
 
 # Coding and Output:
- import pandas as pd
- import seaborn as sns
- import matplotlib.pyplot as plt
- df=pd.read_csv("titanic_dataset.csv")
- df.head()
+   import pandas as pd
+    import seaborn as sns
+    import matplotlib.pyplot as plt
+    df=pd.read_csv("titanic_dataset.csv")
+    df.head()
  <img width="929" height="498" alt="image" src="https://github.com/user-attachments/assets/16836e5a-1c57-4ce3-b92b-3048285cdf3d" />
 1.Lineplot:
  x=[1,2,3,4,5]
