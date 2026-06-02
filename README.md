@@ -1,5 +1,6 @@
 # EXNO-6-DS-DATA VISUALIZATION USING SEABORN LIBRARY
-
+NAME:A.BENEDICT FERNANDO
+REG NO:212225230030
 # Aim:
   To Perform Data Visualization using seaborn python library for the given datas.
 
@@ -18,7 +19,71 @@ STEP 4:Apply the various data visualization tools wherever necessary.
 STEP 5:Include Necessary parameters in each functions.
 
 # Coding and Output:
- Include the necessary coding and corresponding screenshots
+ import pandas as pd
+ import seaborn as sns
+ import matplotlib.pyplot as plt
+ df=pd.read_csv("titanic_dataset.csv")
+ df.head()
+ <img width="929" height="498" alt="image" src="https://github.com/user-attachments/assets/16836e5a-1c57-4ce3-b92b-3048285cdf3d" />
+1.Lineplot:
+ x=[1,2,3,4,5]
+ y=[3,6,2,7,1]
+ sns.lineplot(x=x,y=y)
+ plt.title('Line Plot')
+ <img width="939" height="572" alt="image" src="https://github.com/user-attachments/assets/c9dad9f4-1902-4d61-b84f-bdd7a17c3b2e" />
+2.Multi Line Plot:
+ x=[1,2,3,4,5]
+ y1=[3,5,2,6,1]
+ y2=[1,6,4,3,8]
+ y3=[5,2,7,1,4]
+ sns.lineplot(x=x,y=y1)
+ sns.lineplot(x=x,y=y2)
+ sns.lineplot(x=x,y=y3)
+ plt.title('Multi Line Plot')
+ <img width="922" height="641" alt="image" src="https://github.com/user-attachments/assets/53efb425-3919-450c-8ab7-6144497a6afe" />
+TO VISUALIZE RELATIONSHIPS
+ plt.figure(figsize=(8,5))
+ sns.barplot(x='Embarked',y='Fare',data=df,palette='rainbow')
+ plt.title("Fare Of Passenger By Embarked Town")
+ <img width="932" height="694" alt="image" src="https://github.com/user-attachments/assets/daecd895-7ce6-455c-a58c-13c8bc844a4f" />
+2.Scatter Plot:
+ sns.scatterplot(x="Age", y="Fare", data=df)
+ plt.title('Scatterplot of Age vs Fare')
+ plt.show()
+ <img width="914" height="549" alt="image" src="https://github.com/user-attachments/assets/7ae54e0e-95a6-4500-ab4e-d6cb6c1b8e2f" />
+3.Bubble Chart:
+ sns.scatterplot(x="Age", y="Fare", size="Pclass", data=df, sizes=(30, 200))
+ plt.title('Bubble Chart of Age vs Fare, Size by Passenger Class')
+ plt.show()
+ <img width="922" height="543" alt="image" src="https://github.com/user-attachments/assets/aaa92312-329e-48c6-8526-940bd342b7f8" />
+TO CAPTURE DISTRIBUTIONS
+1.Histogram
+ sns.histplot(data=df,x="Pclass",hue="Survived",kde=True)
+ <img width="909" height="520" alt="image" src="https://github.com/user-attachments/assets/575e5b62-a73b-4f0b-9831-e4842a2138f0" />
+2.Boxplot
+ sns.boxplot(x='Pclass',y='Age',data=df,palette='rainbow')
+ plt.title("Age By Passenger Class")
+ <img width="931" height="655" alt="image" src="https://github.com/user-attachments/assets/858f2fe3-344b-456f-9f68-48a8195150e7" />
+3.Violin Plot
+ sns.violinplot(x="Pclass", y="Fare", data=df)
+ plt.title('Violin Plot of Fare by Passenger Class')
+ plt.show()
+ <img width="898" height="550" alt="image" src="https://github.com/user-attachments/assets/d6179b14-c192-4537-b894-77d0cf2fe713" />
+4.Density Plot
+ sns.kdeplot(data=df['Age'], shade=True)
+ plt.title('Density Plot of Passenger Ages')
+ plt.show()
+
+ <img width="929" height="653" alt="image" src="https://github.com/user-attachments/assets/c43a1646-d05e-40d0-a736-f6accf4865ca" />
+5.Heatmap
+ numeric_df = df.select_dtypes(include=['float64', 'int64'])
+ corr_matrix = numeric_df.corr()
+ sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
+ plt.title('Heatmap of Titanic Dataset')
+ plt.show()
+
+ <img width="942" height="642" alt="image" src="https://github.com/user-attachments/assets/ffbec5ad-19a5-4282-86cd-bfab559b3c90" />
+
 
 # Result:
- Include your result here
+ Thus, the Data Visualization using seaborn python library for the given data is implemented successfully
